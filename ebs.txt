@@ -1,0 +1,21 @@
+df -h
+
+lsblk
+
+file -s /dev/xvdf
+
+mkfs -t xfs /dev/xvdf
+
+mkdir /new-vol
+
+mount /dev/xvdf /new-vol
+
+df -h
+
+## Auto attach
+
+sudo cp /etc/fstab /etc/fstab.bak
+
+/dev/xvdf /newvolume xfs defaults,nofail 0 0
+
+sudo mount -a

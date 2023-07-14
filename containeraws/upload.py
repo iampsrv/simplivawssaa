@@ -12,3 +12,4 @@ def upload_my_file(f):
     s3client = boto3.client('s3')
     s3client.upload_file(filename, bucket_name, filename)
     return filename
+
